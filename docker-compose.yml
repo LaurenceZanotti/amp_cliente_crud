@@ -1,14 +1,19 @@
 services:
   web:
-    image: php:latest-apache
-    build: ./src
+    image: php:7.4-apache
+    build: 
+      context: ./docker
     volumes:
       - ./src:/var/www/html/
     ports:
       - "8080:80"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
 
   db:
-    image: postgres:latest
+    image: postgres:9.6.1
     ports:
       - "5433:5432"
     environment:
