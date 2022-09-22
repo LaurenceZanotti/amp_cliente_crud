@@ -1,0 +1,16 @@
+services:
+  web:
+    image: php:latest-apache
+    build: ./src
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - "8080:80"
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_PASSWORD: dbpass
+      POSTGRES_DB: php_cliente_crud_db
