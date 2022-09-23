@@ -23,8 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.focus()
                 return false
             }
-            // Enforce regex pattern on cpf field
-            if (element.id == 'cpf' && !(/\d{3}\.\d{3}\.\d{3}-\d{2}/.test(element.value))) {
+            // Enforce regex pattern and length on cpf field
+            if (
+                element.id == 'cpf' && 
+                !(/\d{3}\.\d{3}\.\d{3}-\d{2}/.test(element.value)) && 
+                element.value.length !== 14
+            ) {
                 alert(`O campo "${label.textContent}" deve ter o formato NNN.NNN.NNN-NN`)
                 element.focus()
                 return false

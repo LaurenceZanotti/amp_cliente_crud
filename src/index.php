@@ -22,6 +22,8 @@
                 required
                 pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
                 title="Digite o CPF no formato 'nnn.nnn.nnn-nn'"
+                minlength="14"
+                maxlength="14"
             >
         </div>
         <div class="mb-3">
