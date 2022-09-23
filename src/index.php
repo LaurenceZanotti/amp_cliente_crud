@@ -10,22 +10,22 @@
 </head>
 <body>
     <h1>Lista de Clientes</h1>
-    <form>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome do cliente</label>
-            <input type="text" class="form-control" id="nome">
+            <input type="text" class="form-control" id="nome" required>
         </div>
         <div class="mb-3">
             <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpf">
+            <input type="text" class="form-control" id="cpf" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" id="email" required>
         </div>
         <div class="mb-3">
             <label for="datanascimento" class="form-label">Data de nascimento</label>
-            <input type="text" class="form-control" id="datanascimento">
+            <input type="text" class="form-control" id="datanascimento" required>
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
