@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,11 +25,11 @@
         </div>
         <div class="mb-3">
             <label for="datanascimento" class="form-label">Data de nascimento</label>
-            <input type="text" class="form-control" id="datanascimento" required>
+            <input type="date" class="form-control" id="datanascimento" required>
         </div>
         <button type="submit" class="btn btn-primary" id="send_btn">Salvar</button>
     </form>
-    <h2>Cadastrados</h2>
+    <h2 class="mt-4 mb-2">Cadastrados</h2>
     <table class="table">
         <thead>
             <tr>
