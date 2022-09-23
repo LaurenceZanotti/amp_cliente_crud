@@ -33,6 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.focus()
                 return false
             }
+
+            // Email field must have "@" and "." characters to be valid
+            // https://pt.stackoverflow.com/questions/1386/
+            // /express%C3%A3o-regular-para-valida%C3%A7%C3%A3o-de-e-mail
+            // The approach below is very simple for the exercise purposes
+            if (
+                element.id == 'email' && (
+                element.value.indexOf("@") == -1 ||
+                element.value.indexOf(".") == -1
+                )
+            ) {
+                alert(`O campo "${label.textContent}" está inválido`)
+                element.focus()
+                return false
+            }
         }
         // Returns true if validation has succeeded
         return true
