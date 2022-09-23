@@ -17,7 +17,12 @@
         </div>
         <div class="mb-3">
             <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpf" required>
+            <input 
+                type="text" class="form-control" id="cpf" 
+                required
+                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                title="Digite o CPF no formato 'nnn.nnn.nnn-nn'"
+            >
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>

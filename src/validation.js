@@ -17,19 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function formValidation(form_element) {
         // Check if required form elements are empty
         for (const element of form_element) {
+            const label = element.previousElementSibling
             if (element.nodeName == 'INPUT' && element.value == '') {
-                alert(`O campo "${element.previousElementSibling.textContent}" não pode ficar vazio`) || element == ''
+                alert(`O campo "${label.textContent}" não pode ficar vazio`) || element == ''
+                element.focus()
+                return false
+            }
+            // Enforce regex pattern on cpf field
+            if (element.id == 'cpf' && !(/\d{3}\.\d{3}\.\d{3}-\d{2}/.test(element.value))) {
+                alert(`O campo "${label.textContent}" deve ter o formato NNN.NNN.NNN-NN`)
                 element.focus()
                 return false
             }
         }
-
         // Returns true if validation has succeeded
         return true
     }
 
     // Call form validation before send
-    function handleSubmit(ev) {
+    function handleFormSendClick(ev) {
         const form = ev.target.parentNode
         // Validate form
         if (!formValidation(form)) {
@@ -42,5 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle form submission
     const send_button = document.querySelector('#send_btn')
-    send_button.addEventListener('click', ev => handleSubmit(ev))
+    send_button.addEventListener('click', ev => handleFormSendClick(ev))
 })
