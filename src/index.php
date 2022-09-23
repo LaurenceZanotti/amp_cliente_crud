@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <title>Lista de Clientes CRUD</title>
 </head>
-<body>
+<body style="margin: 1em;">
     <h1>Lista de Clientes</h1>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
         <div class="mb-3">
@@ -27,7 +27,7 @@
             <label for="datanascimento" class="form-label">Data de nascimento</label>
             <input type="text" class="form-control" id="datanascimento" required>
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary" id="send_btn">Salvar</button>
     </form>
     <h2>Cadastrados</h2>
     <table class="table">
@@ -64,5 +64,7 @@
         */
         ?>
     </table>
+    <?php /*Import validation script*/ ?>
+    <script src="validation.js"></script>
 </body>
 </html>
